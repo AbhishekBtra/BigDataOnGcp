@@ -1,0 +1,38 @@
+#env(dev/prd) specific
+env: dev
+zone: "asia-southeast2-c"
+region: "asia-southeast2"
+workload: "adhoc" #for data-offload clusters mention datalake OR impala
+dataproc_sa: "sa-dataproc-dev@d@project.iam.gserviceaccount.com"
+dtp_project_id: "data-project"
+
+#onprem cluster specific
+on_prem_name_node_1: "nameservice1-test"
+on_prem_name_node_2: 'node.office.corp.org.com'
+on_prem_hdfs_nameservice: 'node.office.corp.org.com'
+
+#keys and pwds
+key: "key"
+keyring_name: "secrets"
+security_realm: "realm-name"
+keyring_location: "asia-southeast2"
+root_principal_password_uri: "gs://"
+cross_realm_trust_shared_password_uri: "gs://"
+
+
+#dp cluster specific
+data_proc_tags: ["dataproc-pull-network"]
+idle_delete_ttl: 3000
+worker_num_instances: 2
+gcs_bucket_for_dataproc: "bucket"
+master_config_machine_type: "n1-standard-8"
+worker_config_machine_type: "n1-standard-8"
+
+#realm specific
+cross_realm_trust_kdc: "office.corp.org.com"
+cross_realm_trust_realm: "OFFICE.CORP.org.COM"
+cross_realm_trust_admin_server: "office.corp.org.com"
+
+#network specific
+subnetwork_uri_project: "shared-networking-dev-i3tr"
+subnetwork_uri_subnetworks: "data-project-as2-subnet1"
